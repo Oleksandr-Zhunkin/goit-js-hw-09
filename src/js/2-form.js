@@ -35,11 +35,10 @@ function handleFormInp(e) {
 
 function renderPage() {
   const lsData = localStorage.getItem(LS_KEY);
-  try {
-    const result = JSON.parse(lsData);
+  const result = JSON.parse(lsData);
+
+  if (result) {
     formEl.elements.email.value = result.email;
     formEl.elements.message.value = result.message;
-  } catch {
-    console.log(error);
   }
 }
